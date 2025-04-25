@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tounkis Vilageois 2.0</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+<div class="container">
+        <h1>Bienvenue sur mon site</h1>
+        <h2>Aujourd'huis nous sommes le {{date | date:"j, F, Y"}}</h2>
+        <h3> Il est actuellement {{heure}}</h3>
+</div>
+</body>
+</html>
