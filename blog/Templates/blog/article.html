@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes articles</title>
+    <link rel="stylesheet" href="{% static 'blog/css/article.css' %}">
+</head>
+<body>
+<h1>Bienvenu sur ma page d'article</h1>
+<div>
+    {% for articles in articles %}
+    {% if articles.pk == 2 %}
+    <a href="{% url 'blog-detail'%}">
+   <p>{{ articles.title | upper  }}</p>
+    </a>
+     {% else %}
+    <p>{{ articles.title | upper  }}</p>
+    {% endif %}
+
+    {% endfor %}
+</div>
+<div>
+    <a href="{% url 'blog-index' %}"> aller l'accueil</a>
+</div>
+
+</body>
+</html>

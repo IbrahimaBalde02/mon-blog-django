@@ -11,6 +11,7 @@
         <h1>Bienvenue sur mon site</h1>
         <h2>Aujourd'huis nous sommes le {{date | date:"j, F, Y"}}</h2>
         <h3> Il est actuellement {{heure}}</h3>
-</div>
+        <h3> <a href="{% url 'blog-article' %}"> aller a la page article</a> </h3>
+
 </body>
 </html>

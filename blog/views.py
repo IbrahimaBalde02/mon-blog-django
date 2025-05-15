@@ -1,11 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from datetime import datetime
+
+from .models import TableBlog
+
 
 def req_indexblog(request):
     date = datetime.today()
     heure = datetime.now().time()
     return render(request, 'blog/index.html',context={'date':date,'heure':heure})
-def req_article(request,numeroArticle):     #le deuxieme argument c'est pour le numero de l'article a afficher
-    if numeroArticle in ["1","2","3"]:
-        return render(request, f'blog/article{numeroArticle}.html',context={}) #on a utiliser le fstring pour afficher l'article avec son numero
-    return render(request,'blog/page_not_found.html')
+def req_articleblog(request):
+    articles = TableBlog.objects.all()
+    return render(request,'blog/article.html',context={'articles':articles})
+def req_slug(request):
+    post = TableBlog.objects.get(pk=2)
+    return render(request,'blog/page-slug.html',context={'post':post})

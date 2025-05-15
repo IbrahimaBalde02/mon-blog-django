@@ -20,8 +20,10 @@ from django.views.defaults import server_error
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('Bonjour/',server_error),
+    path('ibrahima/', admin.site.urls),
     path('',include('blog.urls')),
+
+
+
 
 ]
